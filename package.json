@@ -1,0 +1,24 @@
+{
+  "name": "soundcloud-waveform",
+  "version": "1.0.0",
+  "description": "Creating a simple transform to the SoundCloud's waveforms from the image url",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pritishvaidya/soundcloud-waveform.git"
+  },
+  "keywords": [
+    "Javascript",
+    "ReactNative",
+    "SoundCloud"
+  ],
+  "author": "Pritish Vaidya",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pritishvaidya/soundcloud-waveform/issues"
+  },
+  "homepage": "https://github.com/pritishvaidya/soundcloud-waveform#readme"
+}
