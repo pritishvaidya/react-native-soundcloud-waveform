@@ -2,23 +2,49 @@
   "name": "soundcloud-waveform",
   "version": "1.0.0",
   "description": "Creating a simple transform to the SoundCloud's waveforms from the image url",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "lint": "eslint . --ignore-path .gitignore --ext .js --ext .jsx",
+    "fix-lint": "yarn lint -- --fix",
+    "prepush": "npm run lint && npm test"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/pritishvaidya/soundcloud-waveform.git"
   },
   "keywords": [
-    "Javascript",
-    "ReactNative",
-    "SoundCloud"
+    "soundcloud",
+    "waveform"
   ],
-  "author": "Pritish Vaidya",
+  "author": "Pritish Vaidya ",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/pritishvaidya/soundcloud-waveform/issues"
   },
-  "homepage": "https://github.com/pritishvaidya/soundcloud-waveform#readme"
+  "homepage": "https://github.com/pritishvaidya/soundcloud-waveform#readme",
+  "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.6.1",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-react": "^7.11.1",
+    "eslint-plugin-react-native": "^3.3.0",
+    "eslint-plugin-standard": "^4.0.0",
+    "husky": "^1.1.0"
+  },
+  "peerDependencies": {
+    "react": "^16.5.2",
+    "react-native": "^0.57.1"
+  },
+  "dependencies": {
+    "d3-array": "^1.2.4",
+    "d3-scale": "^2.1.2",
+    "lodash": "^4.17.11",
+    "prop-types": "^15.6.2"
+  }
 }
