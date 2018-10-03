@@ -1,4 +1,4 @@
-# soundcloud-waveform
+# react-native-soundcloud-waveform
 Creating a simple transform to the SoundCloud's waveforms from the image url
 
 ## Show Cases
@@ -15,7 +15,7 @@ Creating a simple transform to the SoundCloud's waveforms from the image url
 ### Installation
 
 ```bash
-$ npm i soundcloud-waveform --save
+$ npm i react-native-soundcloud-waveform --save
 ```
 
 ### Basic Usage
@@ -28,7 +28,7 @@ import {
   View
 } from 'react-native';
 
-import SoundCloudWaveform from 'soundcloud-waveform'
+import SoundCloudWaveform from 'react-native-soundcloud-waveform'
 
 ...
 setTime = (time) => {
