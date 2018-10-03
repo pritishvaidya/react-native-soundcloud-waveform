@@ -48,7 +48,7 @@ render() {
 ### Properties
 | Prop  | Default  | Type | Description |
 | :------------ |:---------------:| :---------------:| :-----|
-| waveformUrl | required | `func` | The png format `waveform_url` object of the SoundCloud's `track` |
+| waveformUrl | required | `string` | The png format `waveform_url` object of the SoundCloud's `track` |
 | setTime | required | `func` | Callback function to update the current time. (returns progress in between `0 - 100`) |
 | percentPlayed | required | `number` | The current time of the track (progress in between `0 - 1`) |
 | percentPlayable | 0 | `number` | The percentage of the track that has been buffered (progress in between `0 - 1`)|
