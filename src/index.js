@@ -77,23 +77,24 @@ class SoundCloudWave extends Component {
 }
 
 SoundCloudWave.defaultProps = {
+  percentPlayable: 0,
   height: 50,
   width: dimensionsWidth,
-  active: PropTypes.string,
-  activeInverse: PropTypes.string,
-  activePlayable: PropTypes.string,
-  activePlayableInverse: PropTypes.string,
-  inactive: PropTypes.string,
-  inactiveInverse: PropTypes.string,
+  active: '#FF1844',
+  activeInverse: '#4F1224',
+  activePlayable: '#1b1b26',
+  activePlayableInverse: '#131116',
+  inactive: '#424056',
+  inactiveInverse: '#1C1A27',
 };
 
 SoundCloudWave.propTypes = {
   waveformUrl: PropTypes.string.isRequired,
-  height: PropTypes.number,
-  width: PropTypes.number,
   setTime: PropTypes.func.isRequired,
   percentPlayed: PropTypes.number.isRequired,
-  percentPlayable: PropTypes.number.isRequired,
+  percentPlayable: PropTypes.number,
+  height: PropTypes.number,
+  width: PropTypes.number,
   active: PropTypes.string,
   activeInverse: PropTypes.string,
   activePlayable: PropTypes.string,

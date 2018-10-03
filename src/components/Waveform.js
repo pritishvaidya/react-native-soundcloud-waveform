@@ -44,7 +44,7 @@ const Waveform = (
     >
       {chunks.map((chunk, i) => (
         <TouchableOpacity
-          key={chunk.length}
+          key={i}
           onPress={() => {
             setTime(i);
           }}
