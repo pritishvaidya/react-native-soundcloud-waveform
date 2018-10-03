@@ -9,6 +9,8 @@ Creating a simple transform to the SoundCloud's waveforms from the image url
 - [Installation](#installation)
 - [Basic Usage](#basic-usage)
 - [Properties](#properties)
+- [Contribution](#contribution)
+- [Questions](#questions)
 
 ### Installation
 
@@ -60,3 +62,11 @@ render() {
 | activePlayableInverse | `#131116` | `string` | Active buffered track color of the inverse waveform |
 | inactive | `#424056` | `string` | Inactive color of the waveform |
 | inactiveInverse | `#1C1A27` | `string` | Inactive color of the inverse waveform |
+
+## Contribution
+
+- [@pritishvaidya](mailto:pritishvaidya94@gmail.com) The main author.
+
+## Questions
+
+Feel free to [contact me](mailto:pritishvaidya94@gmail.co) or [create an issue](https://github.com/pritishvaidya/soundcloud-waveform/issues/new)
