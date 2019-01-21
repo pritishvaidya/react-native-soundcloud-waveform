@@ -15,11 +15,11 @@ function getColor(
   INACTIVE_INVERSE,
 ) {
   if (bar / bars.length < percentPlayed) {
-    return inverse ? ACTIVE : ACTIVE_INVERSE;
+    return inverse ? ACTIVE_INVERSE : ACTIVE;
   } if (bar / bars.length < percentPlayable) {
-    return inverse ? ACTIVE_PLAYABLE : ACTIVE_PLAYABLE_INVERSE;
+    return inverse ? ACTIVE_PLAYABLE_INVERSE : ACTIVE_PLAYABLE;
   }
-  return inverse ? INACTIVE : INACTIVE_INVERSE;
+  return inverse ? INACTIVE_INVERSE : INACTIVE;
 }
 
 const dimensionsWidth = Dimensions.get('window').width;

@@ -55,7 +55,7 @@ class SoundCloudWave extends Component {
           activePlayableInverse={activePlayableInverse}
           inactive={inactive}
           inactiveInverse={inactiveInverse}
-          inverse
+          inverse={false}
         />
         <Waveform
           waveform={waveform}
@@ -70,7 +70,7 @@ class SoundCloudWave extends Component {
           activePlayableInverse={activePlayableInverse}
           inactive={inactive}
           inactiveInverse={inactiveInverse}
-          inverse={false}
+          inverse
         />
       </View>
     );

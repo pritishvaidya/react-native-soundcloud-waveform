@@ -2,7 +2,8 @@
     "extends": "airbnb",
     "parser": "babel-eslint",
     "plugins": [
-        "react-native"
+        "react-native",
+        "jest"
     ],
     "env": {
         "jest": true
