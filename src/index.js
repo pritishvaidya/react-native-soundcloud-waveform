@@ -1,3 +1,4 @@
+/* eslint import/no-unresolved: [2, { ignore: ['react', 'react-native'] }] */
 /* eslint-disable no-undef */
 import React, { Component } from 'react';
 import { View } from 'react-native';

@@ -1,3 +1,4 @@
+/* eslint import/no-unresolved: [2, { ignore: ['react-native'] }] */
 import { Dimensions } from 'react-native';
 
 function getColor(

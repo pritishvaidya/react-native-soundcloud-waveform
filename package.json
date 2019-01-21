@@ -14,10 +14,16 @@
     "url": "git+https://github.com/pritishvaidya/soundcloud-waveform.git"
   },
   "keywords": [
+    "react-native",
     "soundcloud",
-    "waveform"
+    "waveform",
+    "react-native-soudncloud-waveform"
   ],
-  "author": "Pritish Vaidya ",
+  "author": {
+    "name": "Pritish Vaidya",
+    "email": "pritishvaidya94@gmail.com",
+    "url": "pritishvaidya.com"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/pritishvaidya/soundcloud-waveform/issues"

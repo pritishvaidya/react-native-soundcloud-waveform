@@ -1,3 +1,5 @@
+/* eslint import/no-unresolved: [2, { ignore: ['react', 'react-native'] }] */
+/* eslint-disable react/no-array-index-key */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { View, TouchableOpacity } from 'react-native';
@@ -8,7 +10,7 @@ import _ from 'lodash';
 
 import { getColor } from '../utils';
 
-const Waveform = (
+function Waveform(
   {
     waveform,
     height,
@@ -24,7 +26,7 @@ const Waveform = (
     inactive,
     inactiveInverse,
   },
-) => {
+) {
   const scaleLinearHeight = scaleLinear().domain([0, waveform.height]).range([0, height]);
   const chunks = _.chunk(waveform.samples, waveform.width / ((width - 60) / 3));
   return (
@@ -72,7 +74,7 @@ const Waveform = (
       ))}
     </View>
   );
-};
+}
 
 Waveform.propTypes = {
   waveform: PropTypes.object.isRequired,
