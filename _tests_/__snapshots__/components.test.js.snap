@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Waveform Component Tests component details should render the component correctly 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "flexDirection": "row",
+        "height": 50,
+        "justifyContent": "center",
+        "width": 100,
+      },
+      Object {
+        "transform": Array [
+          Object {
+            "rotateX": "180deg",
+          },
+          Object {
+            "rotateY": "0deg",
+          },
+        ],
+      },
+    ]
+  }
+/>
+`;
