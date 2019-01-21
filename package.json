@@ -4,10 +4,11 @@
   "description": "Creating a simple transform to the SoundCloud's waveforms from the image url",
   "main": "src/index.js",
   "scripts": {
+    "prebuild": "rimraf dist",
     "test": "jest",
+    "test:watch": "npm run test -- --watch",
     "lint": "eslint . --ignore-path .gitignore --ext .js --ext .jsx",
-    "fix-lint": "yarn lint -- --fix",
-    "prepush": "npm run lint && npm test"
+    "fix-lint": "yarn lint -- --fix"
   },
   "repository": {
     "type": "git",
@@ -41,7 +42,9 @@
     "eslint-plugin-react": "^7.11.1",
     "eslint-plugin-react-native": "^3.3.0",
     "eslint-plugin-standard": "^4.0.0",
-    "husky": "^1.1.0"
+    "husky": "^1.1.0",
+    "jest": "^23.6.0",
+    "lint-staged": "^8.1.0"
   },
   "peerDependencies": {
     "react": "^16.5.2",
@@ -52,5 +55,21 @@
     "d3-scale": "^2.1.2",
     "lodash": "^4.17.11",
     "prop-types": "^15.6.2"
+  },
+  "lint-staged": {
+    "linters": {
+      "*.js": [
+        "eslint --fix",
+        "git add"
+      ]
+    },
+    "ignore": [
+      "**/test/*.js"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   }
 }
