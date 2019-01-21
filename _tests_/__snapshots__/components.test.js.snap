@@ -22,5 +22,32 @@ exports[`Waveform Component Tests component details should render the component 
       },
     ]
   }
-/>
+>
+  <View
+    accessible={true}
+    isTVSelectable={true}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "opacity": 1,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "backgroundColor": "#4F1224",
+          "height": 3.2,
+          "marginRight": 1,
+          "width": 2,
+        }
+      }
+    />
+  </View>
+</View>
 `;

@@ -5,7 +5,7 @@ import TestRenderer from 'react-test-renderer';
 import Waveform from '../src/components/Waveform';
 
 describe('Waveform Component Tests', () => {
-  const waveform = {};
+  const waveform = { samples: [1, 2, 3, 5, 5], width: 200, height: 50 };
   const height = 50;
   const width = 100;
   const setTime = () => {};
@@ -362,14 +362,18 @@ describe('Waveform Component Tests', () => {
       inactiveInverse={inactiveInverse}
       inverse={inverse}
     />);
+    const wrapper = componentTestRenderer.toJSON();
 
     it('should render the component correctly', () => {
       expect(componentTestRenderer).toMatchSnapshot();
     });
 
     it('should contain a view ', () => {
-      const wrapper = componentTestRenderer.toJSON();
       expect(wrapper.type).toBe('View');
+    });
+
+    it('should contain a touchable elements ', () => {
+      expect(wrapper.children[0].type).toBe('View');
     });
   });
 });

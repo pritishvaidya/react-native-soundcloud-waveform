@@ -62,9 +62,18 @@ describe('Main Component Tests', () => {
       setTime={setTime}
       percentPlayed={percentPlayed}
     />);
+    const { root } = componentTestRenderer;
+    const { instance } = root;
 
     it('should render the component correctly', () => {
       expect(componentTestRenderer).toMatchSnapshot();
+    });
+
+    instance.setState({ waveform: {} });
+    it('should contain a view ', () => {
+      expect(root.findByType(
+        SoundCloudWaveform,
+      ).props).toMatchObject({ waveformUrl, setTime, percentPlayed });
     });
   });
 });
