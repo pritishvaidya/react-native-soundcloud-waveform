@@ -18,7 +18,16 @@ exports[`Main Component Tests main component details should render the component
           "justifyContent": "center",
           "width": 750,
         },
-        false,
+        Object {
+          "transform": Array [
+            Object {
+              "rotateX": "180deg",
+            },
+            Object {
+              "rotateY": "0deg",
+            },
+          ],
+        },
       ]
     }
   />
@@ -31,16 +40,7 @@ exports[`Main Component Tests main component details should render the component
           "justifyContent": "center",
           "width": 750,
         },
-        Object {
-          "transform": Array [
-            Object {
-              "rotateX": "180deg",
-            },
-            Object {
-              "rotateY": "0deg",
-            },
-          ],
-        },
+        false,
       ]
     }
   />
