@@ -1,10 +1,15 @@
 {
   "name": "react-native-soundcloud-waveform",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Creating a simple transform to the SoundCloud's waveforms from the image url",
-  "main": "src/index.js",
+  "main": "dist/react-native-soundcloud-waveform.cjs.js",
+  "jsnext:main": "dist/react-native-soundcloud-waveform.esm.js",
+  "module": "dist/react-native-soundcloud-waveform.esm.js",
   "scripts": {
     "prebuild": "rimraf dist",
+    "prepublishOnly": "run-s build",
+    "prepack": "run-s build",
+    "build": "rollup -c",
     "test": "jest",
     "test:watch": "npm run test -- --watch",
     "test:coverage": "jest --coverage",
@@ -15,6 +20,9 @@
     "type": "git",
     "url": "git+https://github.com/pritishvaidya/soundcloud-waveform.git"
   },
+  "files": [
+    "dist"
+  ],
   "keywords": [
     "react-native",
     "soundcloud",
@@ -32,9 +40,18 @@
   },
   "homepage": "https://github.com/pritishvaidya/soundcloud-waveform#readme",
   "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.3.0",
+    "@babel/preset-env": "^7.3.0",
+    "@babel/preset-react": "^7.0.0",
     "babel-core": "^6.26.3",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.5",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.23",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-react-native": "5",
     "check-prop-types": "^1.1.2",
     "eslint": "^5.6.1",
     "eslint-config-airbnb": "^17.1.0",
@@ -50,9 +67,18 @@
     "husky": "^1.1.0",
     "jest": "^23.6.0",
     "lint-staged": "^8.1.0",
+    "npm-run-all": "^4.1.5",
     "react": "^16.7.0",
     "react-native": "^0.57.8",
-    "react-test-renderer": "^16.7.0"
+    "react-test-renderer": "^16.7.0",
+    "rollup": "^1.1.2",
+    "rollup-plugin-babel": "^4.3.2",
+    "rollup-plugin-commonjs": "^9.2.0",
+    "rollup-plugin-json": "^3.1.0",
+    "rollup-plugin-node-resolve": "^4.0.0",
+    "rollup-plugin-replace": "^2.1.0",
+    "rollup-plugin-sourcemaps": "^0.4.2",
+    "rollup-plugin-terser": "^4.0.2"
   },
   "peerDependencies": {
     "react": "^16.5.2",
@@ -68,7 +94,11 @@
     "preset": "react-native",
     "transform": {
       "^.+\\.js$": "<rootDir>/node_modules/react-native/jest/preprocessor.js"
-    }
+    },
+    "modulePathIgnorePatterns": ["<rootDir>/example/"],
+    "setupFiles": [
+      "<rootDir>/global-mocks.js"
+    ]
   },
   "lint-staged": {
     "linters": {

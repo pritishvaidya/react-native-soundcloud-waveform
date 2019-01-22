@@ -3,8 +3,7 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
 import PropTypes from 'prop-types';
-import 'isomorphic-fetch';
-
+import 'whatwg-fetch';
 
 import Waveform from './components/Waveform';
 
@@ -57,7 +56,7 @@ class SoundCloudWave extends Component {
           activePlayableInverse={activePlayableInverse}
           inactive={inactive}
           inactiveInverse={inactiveInverse}
-          inverse={false}
+          inverse
         />
         <Waveform
           waveform={waveform}
@@ -72,7 +71,7 @@ class SoundCloudWave extends Component {
           activePlayableInverse={activePlayableInverse}
           inactive={inactive}
           inactiveInverse={inactiveInverse}
-          inverse
+          inverse={false}
         />
       </View>
     );
