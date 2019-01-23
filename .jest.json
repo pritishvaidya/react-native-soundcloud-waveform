@@ -3,6 +3,5 @@
   "testRegex": "./src/_tests_/.*.js$",
   "preset": "react-native",
   "testURL": "http://localhost",
-  "testEnvironment": "jsdom",
-
+  "testEnvironment": "jsdom"
 }
