@@ -73,8 +73,8 @@
     "rollup-plugin-terser": "^4.0.2"
   },
   "peerDependencies": {
-    "react": "^16.5.2",
-    "react-native": "^0.57.1"
+    "react": "*",
+    "react-native": "*"
   },
   "dependencies": {
     "d3-array": "^1.2.4",
