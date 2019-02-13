@@ -1,6 +1,6 @@
 {
   "name": "react-native-soundcloud-waveform",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Creating a simple transform to the SoundCloud's waveforms from the image url",
   "main": "dist/react-native-soundcloud-waveform.cjs.js",
   "jsnext:main": "dist/react-native-soundcloud-waveform.esm.js",
