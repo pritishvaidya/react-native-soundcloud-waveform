@@ -11,17 +11,13 @@ import { dimensionsWidth } from './utils';
 class SoundCloudWave extends Component {
   state = {
     waveform: null,
-  }
+  };
 
   componentDidMount() {
     const { waveformUrl } = this.props;
-    fetch(waveformUrl.replace('png', 'json'))
-      .then(res => res.json())
-      .then((json) => {
-        this.setState({
-          waveform: json,
-        });
-      });
+    this.setState({
+      waveform: waveformUrl,
+    });
   }
 
   render() {
@@ -41,7 +37,14 @@ class SoundCloudWave extends Component {
     const { waveform } = this.state;
     if (!waveform) return null;
     return (
-      <View style={{ flex: 1, justifyContent: 'center' }}>
+      <View
+        style={{
+          flex: 1,
+          justifyContent: 'center',
+          position: 'absolute',
+          bottom: -30,
+        }}
+      >
         <Waveform
           waveform={waveform}
           height={height}
