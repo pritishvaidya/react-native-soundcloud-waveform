@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { View, TouchableOpacity } from 'react-native';
 
 import { scaleLinear } from 'd3-scale';
-import { mean, max } from 'd3-array';
+import { mean, max, min } from 'd3-array';
 import _ from 'lodash';
 
 import { getColor } from '../utils';
