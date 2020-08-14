@@ -77,7 +77,7 @@ function Waveform({
               ),
               width: width / 100 - 1,
               marginRight: 1,
-              height: scaleLinearHeight(i % 2 ? mean(chunk) : max(chunk)),
+              height: scaleLinearHeight(i % 3 == 0 ? min(chunk) : i % 3 == 1 ? mean(chunk) :  max(chunk)),
             }}
           />
         </TouchableOpacity>
