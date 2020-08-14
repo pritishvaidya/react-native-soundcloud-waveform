@@ -10,65 +10,75 @@ import _ from 'lodash';
 
 import { getColor } from '../utils';
 
-function Waveform(
-  {
-    waveform,
-    height,
-    width,
-    setTime,
-    percentPlayed,
-    percentPlayable,
-    inverse,
-    active,
-    activeInverse,
-    activePlayable,
-    activePlayableInverse,
-    inactive,
-    inactiveInverse,
-  },
-) {
-  const scaleLinearHeight = scaleLinear().domain([0, waveform.height]).range([0, height]);
-  const chunks = _.chunk(waveform.samples, waveform.width / ((width - 60) / 3));
+function Waveform({
+  waveform,
+  height,
+  width,
+  setTime,
+  percentPlayed,
+  percentPlayable,
+  inverse,
+  active,
+  activeInverse,
+  activePlayable,
+  activePlayableInverse,
+  inactive,
+  inactiveInverse,
+}) {
+  const scaleLinearHeight = scaleLinear()
+    .domain([0, waveform.height])
+    .range([0, height]);
+  const chunks = _.chunk(waveform.samples, waveform.width / 100);
+  let waveformSamples = [];
+  if (chunks.length > 100) {
+    for (i = 0; i < 100; i++) {
+      waveformSamples.push(chunks[i]);
+    }
+  } else {
+    for (i = 0; i < 100 - chunks.length; i++) {
+      waveformSamples.push(chunks[chunks.length - (i + 1)]);
+    }
+  }
   return (
-    <View style={[{
-      height,
-      width,
-      justifyContent: 'center',
-      flexDirection: 'row',
-    },
-    inverse && {
-      transform: [
-        { rotateX: '180deg' },
-        { rotateY: '0deg' },
-      ],
-    },
-    ]}
+    <View
+      style={[
+        {
+          height,
+          width,
+          justifyContent: 'center',
+          flexDirection: 'row',
+        },
+        inverse && {
+          transform: [{ rotateX: '180deg' }, { rotateY: '0deg' }],
+        },
+      ]}
     >
-      {chunks.map((chunk, i) => (
+      {waveformSamples.map((chunk, i) => (
         <TouchableOpacity
           key={i}
           onPress={() => {
             setTime(i);
           }}
         >
-          <View style={{
-            backgroundColor: getColor(
-              chunks,
-              i,
-              percentPlayed,
-              percentPlayable,
-              inverse,
-              active,
-              activeInverse,
-              activePlayable,
-              activePlayableInverse,
-              inactive,
-              inactiveInverse,
-            ),
-            width: 2,
-            marginRight: 1,
-            height: scaleLinearHeight(mean(chunk)),
-          }}
+          <View
+            style={{
+              backgroundColor: getColor(
+                waveformSamples,
+                i,
+                percentPlayed,
+                percentPlayable,
+                inverse,
+                active,
+                activeInverse,
+                activePlayable,
+                activePlayableInverse,
+                inactive,
+                inactiveInverse
+              ),
+              width: 2,
+              marginRight: 1,
+              height: scaleLinearHeight(mean(chunk)),
+            }}
           />
         </TouchableOpacity>
       ))}
