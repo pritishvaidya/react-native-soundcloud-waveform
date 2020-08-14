@@ -29,13 +29,13 @@ function Waveform({
     .domain([0, waveform.height])
     .range([0, height]);
   const chunks = _.chunk(waveform.samples, waveform.width / 100);
-  let waveformSamples = [];
+  const waveformSamples = [];
   if (chunks.length > 100) {
-    for (i = 0; i < 100; i++) {
+    for (let i = 0; i < 100; i += 1) {
       waveformSamples.push(chunks[i]);
     }
   } else {
-    for (i = 0; i < 100 - chunks.length; i++) {
+    for (let i = 0; i < 100 - chunks.length; i += 1) {
       waveformSamples.push(chunks[chunks.length - (i + 1)]);
     }
   }
@@ -73,7 +73,7 @@ function Waveform({
                 activePlayable,
                 activePlayableInverse,
                 inactive,
-                inactiveInverse
+                inactiveInverse,
               ),
               width: 2,
               marginRight: 1,

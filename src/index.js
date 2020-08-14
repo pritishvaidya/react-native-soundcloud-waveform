@@ -9,15 +9,18 @@ import Waveform from './components/Waveform';
 import { dimensionsWidth } from './utils';
 
 class SoundCloudWave extends Component {
-  state = {
-    waveform: null,
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      waveform: null,
+    };
+  }
 
   componentDidMount() {
     const { waveformUrl } = this.props;
     fetch(waveformUrl.replace('png', 'json'))
-      .then(res => res.json())
-      .then(json => {
+      .then((res) => res.json())
+      .then((json) => {
         this.setState({
           waveform: json,
         });
