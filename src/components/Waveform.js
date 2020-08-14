@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { View, TouchableOpacity } from 'react-native';
 
 import { scaleLinear } from 'd3-scale';
-import { mean } from 'd3-array';
+import { mean, max } from 'd3-array';
 import _ from 'lodash';
 
 import { getColor } from '../utils';
@@ -29,13 +29,13 @@ function Waveform({
     .domain([0, waveform.height])
     .range([0, height]);
   const chunks = _.chunk(waveform.samples, waveform.width / 100);
-  const waveformSamples = [];
+  let waveformSamples = [];
   if (chunks.length > 100) {
-    for (let i = 0; i < 100; i += 1) {
+    for (i = 0; i < 100; i++) {
       waveformSamples.push(chunks[i]);
     }
   } else {
-    for (let i = 0; i < 100 - chunks.length; i += 1) {
+    for (i = 0; i < 100 - chunks.length; i++) {
       waveformSamples.push(chunks[chunks.length - (i + 1)]);
     }
   }
@@ -45,7 +45,7 @@ function Waveform({
         {
           height,
           width,
-          justifyContent: 'center',
+          justifyContent: 'flex-start',
           flexDirection: 'row',
         },
         inverse && {
@@ -73,11 +73,11 @@ function Waveform({
                 activePlayable,
                 activePlayableInverse,
                 inactive,
-                inactiveInverse,
+                inactiveInverse
               ),
-              width: 2,
+              width: width / 100 - 1,
               marginRight: 1,
-              height: scaleLinearHeight(mean(chunk)),
+              height: scaleLinearHeight(i % 2 ? mean(chunk) : max(chunk)),
             }}
           />
         </TouchableOpacity>
